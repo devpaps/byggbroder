@@ -8,7 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale; }
 
 .hero {
-  background: url("./dist/images/head-image.jpeg") center;
+  background: url("/dist/images/head-image.jpg") center;
   background-size: cover;
   height: 500px;
   max-width: 100%; }
