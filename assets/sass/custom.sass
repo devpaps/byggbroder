@@ -1,0 +1,224 @@
+*
+  box-sizing: border-box
+
+body
+
+  font: 16px/1.4 'Titillium Web', sans-serif
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+// Hero
+
+.hero
+  background: url("/dist/images/head-image.jpeg") center
+  background-size: cover
+  height: 500px
+  max-width: 100%
+
+.hero-info
+  position: relative
+  top: 50%
+  transform: translateY(-50%)
+  text-align: center
+
+.kontakt
+  margin-top: 5rem
+  background: #03A9F4
+  border-color: #03A9F4
+  transition: all 300ms ease
+  @media (max-width: 320px)
+    margin-top: 0rem
+  &:hover
+    background: #0288D1
+
+.hero-heading
+  color: #fff
+  margin: 0
+  font-size: 8rem
+  @media (max-width: 765px)
+    font-size: 6rem
+  @media (max-width: 550px)
+    font-size: 4rem
+  @media (max-width: 320px)
+    font-size: 3rem
+
+
+
+.hero-sub-heading, h3
+  color: #fff
+  @media (max-width: 414px)
+    font-size: 1.2rem
+  @media (max-width: 320px)
+    font-size: 1rem
+
+.button
+  background: rgb(28, 184, 65)
+  border-radius: 4px
+  padding: 8px 14px 8px 14px
+  color: #fff
+  cursor: pointer
+  display: inline-block
+  margin-top: 3rem
+  transition: all .2s ease
+  @media (max-width: 320px)
+    font-size: 1.2rem
+  &:hover
+    color: #fff
+    background: rgb(28, 184, 5)
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23)
+    transform: scale(1.1)
+
+
+// Navigation
+
+
+.burger-nav
+  @media (max-width: 865px)
+    display: block
+    height: 40px
+    width: 100%
+    background: url("/dist/images/menu.svg") no-repeat 50% center
+    background-size: 30px
+    background-color: #404040
+    cursor: pointer
+
+ul
+  display: flex
+  justify-content: center
+  width: 100%
+  background: #B93B2D
+  padding: 0
+  margin: 0
+
+  @media (max-width: 865px)
+    overflow: hidden
+    background: #B93B2D
+    flex-direction: column
+    align-items: center
+    height: 0px
+
+    &.open
+      height: auto
+
+
+
+li
+  list-style-type: none
+  margin: 0
+  padding: 0rem 4rem
+  @media (max-width: 768px)
+    padding: 0rem
+    text-align: center
+    width: 100%
+    &:nth-child(1)
+      padding-bottom: .3rem
+
+
+a.nav-animate
+  padding: 1.4rem 3rem
+  color: #fff
+  text-decoration: none
+  text-transform: uppercase
+  letter-spacing: 2px
+  &.active
+    background: #2098D1
+    width: 100%
+
+// Nav Services Animation
+
+.nav-animate
+  display: inline-block
+  vertical-align: middle
+  transform: perspective(1px) translateZ(0)
+  box-shadow: 0 0 1px transparent
+  position: relative
+  background: #B93B2D
+  transition-property: color
+  transition-duration: 0.3s
+  &:before
+    content: ""
+    position: absolute
+    z-index: -1
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    background: #2098D1
+    transform: scaleX(0)
+    transform-origin: 50%
+    transition-property: transform
+    transition-duration: 0.3s
+    transition-timing-function: ease
+  &:hover, &:focus, &:active
+    color: white
+  &:hover:before, &:focus:before, &:active:before
+    transform: scaleX(1)
+
+// Services
+
+.services
+  margin: 5rem 0 5rem
+  text-align: center
+
+
+  .tummenupp
+    display: block
+    margin: auto
+    height: 100px
+    margin-bottom: 30px
+    transition: all 300ms ease-in-out
+    &:hover
+      transform: scale(1.1) rotate(10deg)
+
+.snickare
+  float: right
+  display: block
+  max-width: 100%
+
+
+// Footer-top
+
+.footer-top
+  height: auto
+  background: #363839
+  border-bottom: 1px solid #4B4C4D
+  margin-top: 5rem
+  h4
+    color: #fff
+    text-transform: uppercase
+  p
+    color: #ccc
+    text-align: left
+  .container
+    a
+      display: flex
+      flex-direction: column
+      color: #ccc
+      padding: 1rem 0 1rem
+      font-weight: 700
+      border-bottom: 1px solid #666
+      &:hover
+        background: #B93B2D
+        transition: all 200ms ease
+
+// Footer-bottom
+
+.footer-bottom
+  height: auto
+  background: #282A2B
+  p
+    color: #ccc
+    @media (max-width: 320px)
+      font-size: 1.2rem
+    @media (max-width: 414px)
+      text-align: center
+
+// Global
+
+.info
+  margin-top: 10rem
+
+a
+  &:hover
+    text-decoration: none

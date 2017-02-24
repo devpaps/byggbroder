@@ -1,0 +1,19 @@
+{
+  "name": "byggbroder",
+  "version": "1.0.0",
+  "description": "Webbsida åt företaget BVärmlands Byggbröder AB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lars Jönsson",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-strip-css-comments": "^1.2.0"
+  }
+}
