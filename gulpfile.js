@@ -3,6 +3,15 @@ var sass                = require('gulp-sass');
 var cssnano             = require('gulp-cssnano');
 var imagemin            = require('gulp-imagemin');
 var autoprefixer        = require('gulp-autoprefixer');
+var bs                  = require('browser-sync').create();
+
+gulp.task('browser-sync', ['sass'], function() {
+    bs.init({
+        server: {
+            baseDir: "./"
+        }
+    });
+});
 
 
 var autoprefixerOptions = {
@@ -20,6 +29,7 @@ gulp.task('sass', function() {
   return gulp.src('./assets/sass/custom.sass')
     .pipe(sass())
     .pipe(gulp.dest('./assets/css'))
+    .pipe(bs.reload({stream: true}));
 });
 
 //Minify Images
@@ -43,9 +53,11 @@ gulp.task('minify', function(){
     .pipe(gulp.dest('./dist'))
 });
 
+
 //Tasks that runs when i type gulp watch in cmd
-gulp.task('watch', function(){
+gulp.task('watch',['browser-sync'], function(){
   gulp.watch('./assets/sass/custom.sass', ['sass']);
+  gulp.watch("*.html").on('change', bs.reload);
   gulp.watch('./assets/css/custom.css', ['autoprefixer']);
   gulp.watch('./assets/css/custom.css', ['images']);
   gulp.watch('./dist/custom.css', ['minify']);
